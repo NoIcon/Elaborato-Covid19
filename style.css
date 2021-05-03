@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 100vh;
+}
+
+.navbar-style{
+    box-shadow: 0 5px 20px #d63729;
+}
+
+.logo
+{
+    height: 53px;
+    padding: 2px 10px;
+}
+
+.conteiner
+{
+    align-self: auto;
+}
+
+.icon-bar{
+    background: red;
+}
+
+.navbar-header
+{
+    margin-top: auto;
+}
+
+li a
+{
+    color: darkred;
+}
+
+.collapse navbar-collapse
+{
+    align-content: center;
+}
