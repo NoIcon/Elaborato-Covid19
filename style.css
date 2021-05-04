@@ -4,6 +4,31 @@
     font-family: Verdana;
 }
 
+html, body
+{
+	height: 100%;
+}
+
+.container1
+{
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: 80vh; 
+	height: 80%; 
+	width: 80%;
+ 	position: relative; 
+} 
+
+/* .container2
+{
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: 500px;
+	width: 1000px;
+} */
+
 .navbar{
     box-shadow: 0 5px 5px #d63729;
     margin-left: 10px;
