@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Elaborato-Covid19</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
 </head>
 
 <body>
@@ -38,19 +38,34 @@
     <div id="container1" class="container1">
         <canvas id="myChart1"></canvas>
     </div>
-    <div id="container2">
+    <div>
+        aggiungere link statistiche
+    </div>
+    <div id="container2" class="container2">
         <canvas id="myChart2"></canvas>
     </div>
+    <div>
+        aggiungere link statistiche
+    </div>
+    <div id="container3" class="container3">
+        <canvas id="myChart3"></canvas>
+    </div>
+    <div>
+        aggiungere link statistiche
+    </div>
+
 
     <script>
-        var myChart1 = document.getElementById('myChart1').getContext('2d');
+        window.onload = function() {
+            var myChart1 = document.getElementById('myChart1').getContext('2d');
 
         // Global Options
-        Chart.defaults.global.defaultFontFamily = 'Times New Roman';
-        Chart.defaults.global.defaultFontSize = 15;
-        Chart.defaults.global.defaultFontColor = '#777';
+        // Chart.defaults.global.defaultFontFamily = 'Times New Roman';
+        // Chart.defaults.global.defaultFontSize = 15;
+        // Chart.defaults.global.defaultFontColor = '#777';
 
-        var massPopChart = new Chart(myChart1, {
+        window.boh = new Chart(myChart1, {
+        responsive: true,
         type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
         data:{
             labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
@@ -100,6 +115,129 @@
             }
         }
         });
+
+
+
+        var myChart2 = document.getElementById('myChart2').getContext('2d');
+
+        // Global Options
+        // Chart.defaults.global.defaultFontFamily = 'Times New Roman';
+        // Chart.defaults.global.defaultFontSize = 15;
+        // Chart.defaults.global.defaultFontColor = '#777';
+
+        window.boh2 = new Chart(myChart2, {
+        responsive: true,
+        type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
+            datasets:[{
+            label:'Morti Giornalieri',
+            data:[
+                619,
+                184,
+                156,
+                165,
+                1051,
+                907
+            ],
+            //backgroundColor:'green',
+            backgroundColor:[
+                'rgba(0, 0, 0, 0.6)',
+            ],
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#b00909'
+            }]
+        },
+        options:{
+            title:{
+            text:'Morti giornalieri',
+            fontSize:30,
+            },
+            legend:{
+            display:true,
+            position:'bottom',
+            labels:{
+                fontColor:'#000'
+            }
+            },
+            layout:{
+            padding:{
+                left:50,
+                right:50,
+                bottom:10,
+                top:10
+            }
+            },
+            tooltips:{
+            enabled:true
+            }
+        }
+        });
+        
+        var myChart3 = document.getElementById('myChart3').getContext('2d');
+
+        // Global Options
+        // Chart.defaults.global.defaultFontFamily = 'Times New Roman';
+        // Chart.defaults.global.defaultFontSize = 15;
+        // Chart.defaults.global.defaultFontColor = '#777';
+
+        var bo3 = new Chart(myChart3, {
+        responsive: true,
+        type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+            labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
+            datasets:[{
+            label:'Guariti Giornalieri',
+            data:[
+                90700,
+                61900,
+                105100,
+                18400,
+                16500,
+                15600
+            ],
+            backgroundColor:[
+                'rgba(15, 176, 0, 0.6)',
+            ],
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#b00909'
+            }]
+        },
+        options:{
+            title:{
+            text:'Guariti giornalieri',
+            fontSize:30,
+            },
+            legend:{
+            display:true,
+            position:'bottom',
+            labels:{
+                fontColor:'#0fb000'
+            }
+            },
+            layout:{
+            padding:{
+                left:50,
+                right:50,
+                bottom:10,
+                top:10
+            }
+            },
+            tooltips:{
+            enabled:true
+            }
+        }
+        }); 
+    
+    }
+        
+
+
+
     </script>
 
    
@@ -148,12 +286,9 @@
 
 
     <script type="text/javascript" src="grafico1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
