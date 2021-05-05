@@ -12,23 +12,24 @@ html, body
 .container1
 {
 	margin: auto;
-	/* margin-top: 50px;
-	margin-bottom: 50px; */
-	height: 80vh; 
-	height: 80%; 
-	width: 80%;
+	margin-top: 50px;
+	margin-bottom: 50px; 
+	/* height: 80vh;  */
+	/* height: 60%; 
+	width: 80%; */
  	position: relative; 
 } 
+
 
 .container2
 {
 	margin: auto;
 	margin-top: 50px;
 	margin-bottom: 50px; 
-	height: 80vh; 
-	height: 80%; 
-	width: 80%;
- 	position: relative; 
+	/* height: 80vh;  */
+	/* height: 80%; 
+	width: 80%; */
+ 	position: relative;  
 }
 
 .container3
@@ -36,10 +37,17 @@ html, body
 	margin: auto;
 	margin-top: 50px;
 	margin-bottom: 50px; 
-	height: 80vh; 
-	height: 80%; 
-	width: 80%;
+	/* height: 80vh;  */
+	/* height: 80%; 
+	width: 80%; */
  	position: relative; 
+}
+
+.container4
+{
+	cursor: pointer;
+	font-weight: 900;
+	font-size: 1.2em;
 }
 
 .navbar{
