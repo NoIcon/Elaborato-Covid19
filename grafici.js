@@ -21,14 +21,12 @@ data:{
 		10516,
 		9072
 	],
-	//backgroundColor:'green',
-	backgroundColor:[
-		'rgba(179, 2, 2, 0.6)',
-	],
+	backgroundColor:'rgba(170, 2, 2, 0.6)',
+	borderColor: 'rgba(179, 2, 2, 0.6)',
 	borderWidth:1,
-	borderColor:'#777',
 	hoverBorderWidth:3,
-	hoverBorderColor:'#b00909'
+	hoverBorderColor:'#b00909',
+	fill: false,
 	}]
 },
 options:{
