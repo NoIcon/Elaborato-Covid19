@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bootstrap 4 Introduction</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <title>Elaborato-Covid19</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a href="#" class="navbar-brand"><img class="logo" src="logoCovid19.png"></a>
+        <a href="index.html" class="navbar-brand"><img class="logo" src="logoCovid19.png"></a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +31,66 @@
                 <li class="nav-item">
                     <a href="FuturePrevisioni.html" class="nav-link">Future previsioni</a>
                 </li>
+                <li class="nav-item">
+                    <a href="filtri.html" class="nav-link">Filtri</a>
+                </li>
             </ul>
         </div>
+
     </nav>
+
+
+
+
+
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>chi siamo?</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="https://scann3d.it/#/">other project</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Siti ufficiali Italiani</h4>
+                    <ul>
+                        <li><a href="https://www.governo.it/">governo</a></li>
+                        <li><a href="https://www.salute.gov.it/portale/home.html">Salute</a></li>
+                        <li><a href="http://www.protezionecivile.gov.it/">protezione civile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Covid nel mondo</h4>
+                    <ul>
+                        <li><a href="https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data">nel mondo</a></li>
+                        <li><a href="https://www.nytimes.com/interactive/2021/us/covid-cases.html">In America</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/COVID-19_pandemic_by_country_and_territory">altre fonti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+
+
+
+    <script type="text/javascript" src="grafici.js"></script>
+    <script type="text/javascript" src="comparsa.js"></script>
+    <script type="text/javascript" src="mappa.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+</html>

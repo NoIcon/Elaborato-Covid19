@@ -15,8 +15,16 @@ html, body
 	margin-top: 50px;
 	margin-bottom: 50px; 
  	position: relative; 
+	animation: container1Animation;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
 }  
 
+@keyframes container1Animation
+{
+	0% {top:-300px}
+	100% {top: 0px}
+}
 
 .container2
 {
@@ -27,6 +35,15 @@ html, body
 	/* height: 80%; 
 	width: 80%; */
  	position: relative;  
+	animation: container2Animation;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes container2Animation
+{
+	0% {left:-300px}
+	100% {left: 0px}
 }
 
 .container3
@@ -38,20 +55,65 @@ html, body
 	/* height: 80%; 
 	width: 80%; */
  	position: relative; 
+	animation: container3Animation;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes container3Animation
+{
+	0% {right:-300px}
+	100% {right: 0px}
 }
 
 .container4
 {
+	margin-bottom: 50px;
+} 
+
+.bottone
+{
+	display: block;
+	width: 30%;
+	padding: 15px;
+	border: none;
+	border-radius: 10px 10px 10px 10px;
+	outline: none;
 	cursor: pointer;
-	font-weight: 900;
-	font-size: 1.2em;
+	background-color: #911f15c9;
+	text-align: left;
+	transition: background 0.2s;
+	margin: auto;
+}
+
+.bottone::after
+{
+	content: '\25be';
+	float: right;
+	transform: scale(1.5);
+}
+
+.bottone--active{
+	background-color: rgb(136, 133, 133);
+}
+.bottone--active::after{
+	content: '\25b4';
+}
+
+.cont
+{
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.2s;
+
+	padding: 0 15px;
 }
 
 .navbar{
     box-shadow: 0 5px 5px #d63729;
     margin-left: 10px;
     margin-right: 10px;
-    border-radius: 8%; 
+    border-radius: 10px 10px 10px 10px;
 }
 
 .logo
