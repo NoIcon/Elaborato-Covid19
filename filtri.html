@@ -11,12 +11,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     
     <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="bottoni-filtri.css"> 
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a href="index.html" class="navbar-brand"><img class="logo" src="logoCovid19.png"></a>
+        <a href="index.html" class="navbar-brand"><img class="logo" src="image/logoCovid19.png"></a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,12 +35,73 @@
                 <li class="nav-item">
                     <a href="filtri.html" class="nav-link">Filtri</a>
                 </li>
+                <li class="nav-item">
+                    <a href="easterEgg.html" class="nav-link">Easter egg</a>
+                </li>
             </ul>
         </div>
 
     </nav>
 
 
+    <div class="allBottoni">
+        <div class="dropdown1">
+            <button onclick="myFunction1()" class="dropbtn1">Età</button>
+            <div id="myDropdown1" class="dropdown-content1">
+              <a href="filtri/eta/16-19.html">16-19</a>
+              <a href="filtri/eta/20-29.html">20-29</a>
+              <a href="filtri/eta/30-39.html">30-39</a>
+              <a href="filtri/eta/40-49.html">40-49</a>
+              <a href="filtri/eta/50-59.html">50-59</a>
+              <a href="filtri/eta/60-69.html">60-69</a>
+              <a href="filtri/eta/70-79.html">70-79</a>
+              <a href="filtri/eta/80+.html">80+</a>
+            </div>
+        </div> 
+
+        <div class="dropdown2">
+            <button onclick="myFunction2()" class="dropbtn2">Sesso</button>
+            <div id="myDropdown2" class="dropdown-content2">
+              <a href="filtri/sesso/femmine.html">F</a>
+              <a href="filtri/sesso/maschi.html">M</a>
+            </div>
+        </div> 
+
+        <!-- <div class="dropdown3">
+            <button onclick="myFunction3()" class="dropbtn3">Vaccinati</button>
+            <div id="myDropdown3" class="dropdown-content3">
+              <a href="#">d</a>
+              <a href="#">e</a>
+              <a href="#">f</a>
+            </div>
+        </div>  -->
+
+        <div class="dropdown4">
+            <button onclick="myFunction4()" class="dropbtn4">Tipo</button>
+            <div id="myDropdown4" class="dropdown-content4">
+              <a href="filtri/tipi/Pfzier-BioNTech.html">Pfzier/BioNTech</a>
+              <a href="filtri/tipi/Vaxzevria(AstraZeneca).html">Vaxzevria(AstraZeneca)</a>
+              <a href="filtri/tipi/Johnson&Johnson.html">Johnson & Johnson</a>
+              <a href="filtri/tipi/Moderna.html">Moderna</a>
+            </div>
+        </div> 
+    </div>
+
+    <div class="testo">
+        <h3>Benvenuto nella sezione di ricerca per filtri.</h3>
+        <h5>Le opzioni utilizzabili in queste sezione, come si vede dai bottoni, sono:</h5>
+        <p>
+            -Ricerca per fascie di età: permette di visualizzare quante persone di quella fascia sono state contagiate, guarite, vaccinate e decedute;
+        </p>
+        <p>
+            -Ricerca per sesso: molto più semplice della precedente, ti permette di visualizzare gli stessi dati, ma divisi per sesso
+        </p>
+        <p>
+            -Ricerca per tipo di vaccino: permette di visualizzare, in base alla scelta, quali vaccini sono stati somministrati e a quante persone.
+        </p>
+    </div>
+    
+    
 
 
 

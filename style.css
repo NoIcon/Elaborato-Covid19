@@ -80,7 +80,7 @@ html, body
 	border-radius: 10px 10px 10px 10px;
 	outline: none;
 	cursor: pointer;
-	background-color: #911f15c9;
+	background-color: #cc4d27;
 	text-align: left;
 	transition: background 0.2s;
 	margin: auto;
@@ -98,6 +98,42 @@ html, body
 }
 .bottone--active::after{
 	content: '\25b4';
+}
+
+.allBottoni
+{
+	display: block;
+	width: 22.1%;
+	padding: 15px;
+	cursor: pointer;
+	margin: auto;
+}
+
+.testo
+{
+	text-align: center;
+	width: 70%;
+	margin: auto;
+}
+
+h3
+{
+	color: #e0112d;
+	margin-top: 10px;
+	font-weight: bold;
+	padding: 1.5%;
+}
+
+h5
+{
+	font-weight: bold;
+}
+
+p
+{
+	margin-top: 1%;
+	font-size: 16px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .cont
