@@ -157,6 +157,12 @@ p
     height: 50px;
 }
 
+.back
+{
+	height: 20px;
+	margin-top: -3px;
+}
+
 .navbar-toggler-icon
 {
     color: red;
