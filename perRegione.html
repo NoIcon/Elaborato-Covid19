@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <link rel="stylesheet" href="style.css"> 
 </head>
 
@@ -43,8 +44,32 @@
     </nav>
 
 
+    <div class="testo">
+        <h3 style="margin-top: 20px;">
+            Visualizzazione delle "heat zones" in base ai casi
+        </h3>
+    </div>
 
+    <div id = "m" class="map"></div>
 
+    <script>
+        var corner1 = L.latLng(47.27, 5.51),
+        corner2 = L.latLng(35.00, 18.52),
+        bounds = L.latLngBounds(corner1, corner2);
+        var mapOptions = {
+            maxBounds: bounds,
+            minZoom: 6,
+            maxZoom: 11
+        }
+        
+        var map = new L.map('m', mapOptions);
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+        map.fitBounds([
+            [47.27, 5.51],
+            [35.00, 18.52]
+        ]);
+    </script>
 
 
     <footer class="footer" id="footer">
