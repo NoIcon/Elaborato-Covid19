@@ -27,6 +27,9 @@
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a href="info_vaccini.html" class="nav-link">Info vaccini</a>
+                </li>
+                <li class="nav-item">
                     <a href="perRegione.html" class="nav-link">Informazioni per regione</a>
                 </li>
                 <li class="nav-item">
@@ -34,6 +37,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="filtri.html" class="nav-link">Filtri</a>
+                </li>
+                <li class="nav-item">
+                    <a href="confronto_dati.html" class="nav-link">Comparazione dati</a>
                 </li>
                 <li class="nav-item">
                     <a href="easterEgg.html" class="nav-link">Easter egg</a>
@@ -52,65 +58,46 @@
 
     <div id = "m" class="map"></div>
 
-    <script>
-        var corner1 = L.latLng(47.27, 5.51),
-        corner2 = L.latLng(35.00, 18.52),
-        bounds = L.latLngBounds(corner1, corner2);
-        var mapOptions = {
-            maxBounds: bounds,
-            minZoom: 6,
-            maxZoom: 11
-        }
-        
-        var map = new L.map('m', mapOptions);
-        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-        map.addLayer(layer);
-        map.fitBounds([
-            [47.27, 5.51],
-            [35.00, 18.52]
-        ]);
-    </script>
 
-
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>chi siamo?</h4>
-                    <ul>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
-                        <li><a href="https://scann3d.it/#/">other project</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Siti ufficiali Italiani</h4>
-                    <ul>
-                        <li><a href="https://www.governo.it/">governo</a></li>
-                        <li><a href="https://www.salute.gov.it/portale/home.html">Salute</a></li>
-                        <li><a href="http://www.protezionecivile.gov.it/">protezione civile</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Covid nel mondo</h4>
-                    <ul>
-                        <li><a href="https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data">nel mondo</a></li>
-                        <li><a href="https://www.nytimes.com/interactive/2021/us/covid-cases.html">In America</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/COVID-19_pandemic_by_country_and_territory">altre fonti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Su di noi</h4>
+                <ul>
+                    <li><a href="chi_siamo.html">chi siamo?</a></li>
+                    <li><a href="cosa_facciamo.html">cosa facciamo?</a></li>
+                    <li><a href="https://scann3d.it/#/">altri progetti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siti ufficiali Italiani</h4>
+                <ul>
+                    <li><a href="https://www.governo.it/">governo</a></li>
+                    <li><a href="https://www.salute.gov.it/portale/home.html">Salute</a></li>
+                    <li><a href="http://www.protezionecivile.gov.it/">protezione civile</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Covid nel mondo</h4>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data">nel mondo</a></li>
+                    <li><a href="https://www.nytimes.com/interactive/2021/us/covid-cases.html">In America</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/COVID-19_pandemic_by_country_and_territory">altre fonti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
-   </footer>
+    </div>
+</footer>
 
 
 
