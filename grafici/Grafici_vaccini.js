@@ -100,7 +100,26 @@ data:{
 	hoverBorderColor:'#b00909',
 	fill: false,
 	lineTension: 0,
-	}]
+	},
+	{
+		label:'Vaccini secoonda dose',
+		data:[
+			907,
+			619,
+			1050,
+			184,
+			165,
+			156
+		],
+		backgroundColor:'rgba(24, 163, 11, 0.6)',
+		borderWidth:3.5,
+		borderColor:'#18a30b',
+		hoverBorderWidth:3,
+		hoverBorderColor:'#18a30b',
+		fill: false,
+		lineTension: 0,
+	}
+	]
 },
 options:{
 	scales:{
@@ -113,7 +132,7 @@ options:{
 	},
 	title:{
 	display:true,
-	text:'Vaccini prima dose',
+	text:'Vaccini prima e seconda dose',
 	fontSize:30,
 	},
 	legend:{
@@ -135,74 +154,75 @@ options:{
 	tooltips:{
 	enabled:true
 	}
+	
 }
 });
 
-var myChart3 = document.getElementById('myChart3').getContext('2d');
+// var myChart3 = document.getElementById('myChart3').getContext('2d');
 
-// Global Options
-// Chart.defaults.global.defaultFontFamily = 'Times New Roman';
-// Chart.defaults.global.defaultFontSize = 15;
-// Chart.defaults.global.defaultFontColor = '#777';
+// // Global Options
+// // Chart.defaults.global.defaultFontFamily = 'Times New Roman';
+// // Chart.defaults.global.defaultFontSize = 15;
+// // Chart.defaults.global.defaultFontColor = '#777';
 
-var boh3 = new Chart(myChart3, {
-responsive: true,
-type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-data:{
-	labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
-	datasets:[{
-	label:'Vaccini secoonda dose',
-	data:[
-		90700,
-		61900,
-		105100,
-		18400,
-		16500,
-		15600
-	],
-	backgroundColor:'rgba(24, 163, 11, 0.6)',
-	borderWidth:3.5,
-	borderColor:'#18a30b',
-	hoverBorderWidth:3,
-	hoverBorderColor:'#18a30b',
-	fill: false,
-	lineTension: 0,
-	}]
-},
-options:{
-	scales:{
-		yAxes:[{
-			ticks:{
-				beginAtZero: true
-			}
+// var boh3 = new Chart(myChart3, {
+// responsive: true,
+// type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+// data:{
+// 	labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
+// 	datasets:[{
+// 	label:'Vaccini secoonda dose',
+// 	data:[
+// 		90700,
+// 		61900,
+// 		105100,
+// 		18400,
+// 		16500,
+// 		15600
+// 	],
+// 	backgroundColor:'rgba(24, 163, 11, 0.6)',
+// 	borderWidth:3.5,
+// 	borderColor:'#18a30b',
+// 	hoverBorderWidth:3,
+// 	hoverBorderColor:'#18a30b',
+// 	fill: false,
+// 	lineTension: 0,
+// 	}]
+// },
+// options:{
+// 	scales:{
+// 		yAxes:[{
+// 			ticks:{
+// 				beginAtZero: true
+// 			}
 			
-		}]
-	},
-	title:{
-	display:true,
-	text:'Vaccini secoonda dose',
-	fontSize:30,
-	},
-	legend:{
-	borderWidth:1,
-	display:true,
-	position:'bottom',
-	labels:{
-		fontColor:'#000'
-	}
-	},
-	layout:{
-	padding:{
-		left:50,
-		right:50,
-		bottom:10,
-		top:10
-	}
-	},
-	tooltips:{
-	enabled:true
-	}
-}
-}); 
+// 		}]
+// 	},
+// 	title:{
+// 	display:true,
+// 	text:'Vaccini secoonda dose',
+// 	fontSize:30,
+// 	},
+// 	legend:{
+// 	borderWidth:1,
+// 	display:true,
+// 	position:'bottom',
+// 	labels:{
+// 		fontColor:'#000'
+// 	}
+// 	},
+// 	layout:{
+// 	padding:{
+// 		left:50,
+// 		right:50,
+// 		bottom:10,
+// 		top:10
+// 	}
+// 	},
+// 	tooltips:{
+// 	enabled:true
+// 	}
+// }
+// }); 
 
 }
