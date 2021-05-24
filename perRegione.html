@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/map.css"> 
 </head>
 
 <body>
@@ -52,98 +53,101 @@
     </nav>
 
 
-    <div class="testo">
-        <h3 style="margin-top: 20px;">
-            Visualizzazione delle "heat zones" in base ai casi
-        </h3>
-    </div>
+    <div class="container-a">
+        <div class="testo">
+           <h3 class="title" style="margin-top: 20px;">centri vaccinali e "heat zones" dei casi</h3>
+        </div>
+        <div class="map-container">
+          <div class="map-frame">  
+            <div id="m"></div>
+          </div>
+        </div>
+      </div>
+			
+    <script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
+        
+    <script>
+        
+        let cfg = {
+            "radius": 0.53,
+            "scaleRadius": true,
+            "maxOpacity": 0.73,
+            "useLocalExtrema": true,
+            valueField: 'price',
+            latField: 'lat',
+        lngField: 'lon',
+        valueField: 'casi'
+        };
+        let heatmapLayer = new HeatmapOverlay(cfg);
+        
+        let min = Math.min(...c.map(casi => casi.value))
+        let max = Math.max(...c.map(casi => casi.value))
+        
+        heatmapLayer.setData({
+            min: min,
+            max: max,
+            data: c
+        });
+        
+        function onEachFeature(feature, layer) {
+            // does this feature have a property named popupContent?
+            if (feature.properties && feature.properties.popupContent) {
+            layer.bindPopup(feature.properties.popupContent);
+            }
+        }
+        
+        var layercentri = L.geoJson(collection, {
+            style: function (feature) {
+                return { color: feature.properties.color };
+            },
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup("Città: " + feature.properties.Città + "<br>Numero centri: " + feature.properties.NumeroCentri);
+            }
+        });
+        
+        
 
-    <div id = "m" style = "width:800px; height:500px; margin: auto; margin-bottom: 20px;border-radius: 10px 10px 10px 10px;"></div>
-			
-		<script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
-    	<script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
-			
-		<script>
-			
-			let cfg = {
-			    "radius": 0.53,
-			    "scaleRadius": true,
-			    "maxOpacity": 0.73,
-			    "useLocalExtrema": true,
-			    valueField: 'price',
-			    latField: 'lat',
-			lngField: 'lon',
-			valueField: 'casi'
-			};
-			let heatmapLayer = new HeatmapOverlay(cfg);
-			
-			let min = Math.min(...c.map(casi => casi.value))
-			let max = Math.max(...c.map(casi => casi.value))
-			
-			heatmapLayer.setData({
-			    min: min,
-			    max: max,
-			    data: c
-			});
-			
-			function onEachFeature(feature, layer) {
-			    // does this feature have a property named popupContent?
-			    if (feature.properties && feature.properties.popupContent) {
-				layer.bindPopup(feature.properties.popupContent);
-			    }
-			}
-			
-			var layercentri = L.geoJson(collection, {
-				style: function (feature) {
-				    return { color: feature.properties.color };
-				},
-				onEachFeature: function (feature, layer) {
-				    layer.bindPopup("Città: " + feature.properties.Città + "<br>Numero centri: " + feature.properties.NumeroCentri);
-				}
-			});
-			
-			
-	
-			var overlayMaps = {
-				"Heat map": heatmapLayer,
-				"Centri vaccinali": layercentri
-			};
-			
-			var corner1 = L.latLng(47.27, 5.51),
-			corner2 = L.latLng(35.00, 18.52),
-			bounds = L.latLngBounds(corner1, corner2);
-			var mapOptions = {
-				maxBounds: bounds,
-				minZoom: 6,
-				maxZoom: 11
-			}
-			
-			
-			
-			
-			var map = new L.map('m', mapOptions);
-			var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-			    
-			/*var baselayer = L.tileLayer(
-			    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-				attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a>'
-			    }
-			)*/
-			
-			
-			var baseMaps = {
-				"Mappa base": layer,
-				//"Heat map": heatmapLayer
-			};
-			
-			map.addLayer(layer);
-			L.control.layers(baseMaps, overlayMaps).addTo(map);
-			map.fitBounds([
-				[47.27, 5.51],
-				[35.00, 18.52]
-			]);
+        var overlayMaps = {
+            "Heat map": heatmapLayer,
+            "Centri vaccinali": layercentri
+        };
+        
+        var corner1 = L.latLng(47.27, 5.51),
+        corner2 = L.latLng(35.00, 18.52),
+        bounds = L.latLngBounds(corner1, corner2);
+        var mapOptions = {
+            maxBounds: bounds,
+            minZoom: 6,
+            maxZoom: 11
+        }
+        
+        
+        
+        
+        var map = new L.map('m', mapOptions);
+        var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            
+        /*var baselayer = L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a>'
+            }
+        )*/
+        
+        
+        var baseMaps = {
+            "Mappa base": layer,
+            //"Heat map": heatmapLayer
+        };
+        
+        map.addLayer(layer);
+        L.control.layers(baseMaps, overlayMaps).addTo(map);
+        map.fitBounds([
+            [47.27, 5.51],
+            [35.00, 18.52]
+        ]);
 
-		</script>
+    </script>
 
 
 <footer class="footer" id="footer">
