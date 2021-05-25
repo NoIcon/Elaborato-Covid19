@@ -68,9 +68,23 @@ html, body
 
 .container4
 {
-	margin-bottom: 50px;
-} 
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px; 
+	/* height: 80vh;  */
+	/* height: 80%; 
+	width: 80%; */
+ 	position: relative; 
+	animation: container4Animation;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+}
 
+@keyframes container4Animation
+{
+	0% {bottom:-300px}
+	100% {bottom: 0px}
+}
 .bottone
 {
 	display: block;
