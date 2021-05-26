@@ -19,7 +19,7 @@ con.connect(function(err) {
     data += "" + row.NuoviPos + " " + row.DataRilievo + "\n";
     console.log("dati presi dal DB");
    // console.log(fields);
-    fs.writeFile("dati.txt", data, (err) =>{
+    fs.writeFile("datiAndamentoNazionale.txt", data, (err) =>{
      if(err) throw err;
     })
    });

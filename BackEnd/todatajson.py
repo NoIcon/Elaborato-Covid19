@@ -1,9 +1,9 @@
 import json
 from os import write
 
-filename = "BackEnd/dati.txt"
+filename = "BackEnd/datiAndamentoNazionale.txt"
 
-out_file = open("dati.js", "w")
+out_file = open("datiAndamentoNazionale.js", "w")
 
 out_file.write('var collection =[')
 
