@@ -1,0 +1,21 @@
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "covid",
+  password: "covid",
+  database: "CovidMain"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  con.query("SELECT NuoviPos, DataRilievo  FROM AndamentoNazionale ORDER BY DataRilievo DESC LIMIT 10", function(err, result){
+   if(err) throw err;
+   console.log("dati presi dal DB");
+   console.log(result);
+   
+   fs.write("", ) => {
+   }
+  });
+});
