@@ -1,45 +1,59 @@
-function getDati(){
-	var datas; 
+function getDati1(){
+	var datas1; 
 	$.ajax({
 		async: false,
 		url: "https://api.elaborato-covid19.com/datiNazionaliNuoviPos",
 		success: function(dati){	
-		datas = dati;	
+		datas1 = dati;	
 		return dati;
 	}});
 
-	return datas;
+	return datas1;
+}
+
+function getDati2(){
+	var datas2; 
+	$.ajax({
+		async: false,
+		url: "https://api.elaborato-covid19.com/datiNazionaliDeceduti",
+		success: function(dati){	
+		datas2 = dati;	
+		return dati;
+	}});
+
+	return datas2;
+}
+
+function getDati3(){
+	var datas3; 
+	$.ajax({
+		async: false,
+		url: "https://api.elaborato-covid19.com/datiNazionaliDimessi",
+		success: function(dati){	
+		datas3 = dati;	
+		return dati;
+	}});
+
+	return datas3;
 }
 
 
 window.onload = function() {
-	var datas = getDati();
+	var datas1 = getDati1();
 
-	/*
-	$(document).ready(function(){
-		console.log("ddentro");
-		
-		$.get("https://api.elaborato-covid19.com/datiNazionaliNuoviPos",function(dati,status){
-			datas = dati;
-			console.log(dati);
-			console.log("Ciao");
-		});
+	console.log(datas1);
+
+	var labels = datas1.map(function(e){
+		return e.Data.replace("T00:00:00.000Z", "");
 	});
-	*/
 
-
-	console.log(datas);
-	// msg = JSON.parse(data);
+	//var labelsA = labels.replace("T00:00:00.000Z", "");
 	
-	var labels = datas.jsonarray.map(function(e){
-		return e.Data;
-	});
-	
-	var data = datas.jsonarray.map(function(e){
-		return e.NuoviCasi;
+	var data = datas1.map(function(e){
+		return e.NuoviPositivi;
 	});
 
-	var myChart1 = myChart1.getContext('2d');
+	var ctx1 = myChart1.getContext('2d');
 
 
 window.boh = {
@@ -98,37 +112,37 @@ options:{
 }
 };
 
-var chart1 = new Chart(myChart1, boh)
+var chart1 = new Chart(ctx1, boh)
 
 
+var datas2 = getDati2();
 
-var myChart2 = document.getElementById('myChart2').getContext('2d');
+	console.log(datas2);
+	
+	var labels = datas2.map(function(e){
+		return e.Data.replace("T00:00:00.000Z", "");
+	});
+	
+	var data = datas2.map(function(e){
+		return e.Deceduti;
+	});
 
-// Global Options
-// Chart.defaults.global.defaultFontFamily = 'Times New Roman';
-// Chart.defaults.global.defaultFontSize = 15;
-// Chart.defaults.global.defaultFontColor = '#777';
+	var ctx2 = myChart2.getContext('2d');
 
-window.boh2 = new Chart(myChart2, {
+
+window.boh2 = {
+
+
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
+	labels:labels,
 	datasets:[{
 	label:'Morti Giornalieri',
-	data:[
-		619,
-		184,
-		156,
-		165,
-		1051,
-		907
-	],
-	//backgroundColor:'green',
+	data: data,
 	backgroundColor:'rgba(0, 0, 0, 0.6)',
-
+	borderColor: '#000',
 	borderWidth:3.5,
-	borderColor:'#000',
 	hoverBorderWidth:3,
 	hoverBorderColor:'#b00909',
 	fill: false,
@@ -146,7 +160,7 @@ options:{
 	},
 	title:{
 	display:true,
-	text:'Morti giornalieri',
+	text:'Morti Giornalieri',
 	fontSize:30,
 	},
 	legend:{
@@ -167,35 +181,42 @@ options:{
 	},
 	tooltips:{
 	enabled:true
-	}
+	},
+	
 }
-});
+};
 
-var myChart3 = document.getElementById('myChart3').getContext('2d');
+var chart2 = new Chart(ctx2, boh2)
 
-// Global Options
-// Chart.defaults.global.defaultFontFamily = 'Times New Roman';
-// Chart.defaults.global.defaultFontSize = 15;
-// Chart.defaults.global.defaultFontColor = '#777';
 
-window.boh3 = new Chart(myChart3, {
+var datas3 = getDati3();
+
+	console.log(datas3);
+	
+	var labels = datas3.map(function(e){
+		return e.Data.replace("T00:00:00.000Z", "");
+	});
+	
+	var data = datas3.map(function(e){
+		return e.Dimessi;
+	});
+
+	var ctx3 = myChart3.getContext('2d');
+
+
+window.boh3 = {
+
+
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
+	labels:labels,
 	datasets:[{
 	label:'Guariti Giornalieri',
-	data:[
-		90700,
-		61900,
-		105100,
-		18400,
-		16500,
-		15600
-	],
+	data: data,
 	backgroundColor:'rgba(24, 163, 11, 0.6)',
+	borderColor: '#18a30b',
 	borderWidth:3.5,
-	borderColor:'#18a30b',
 	hoverBorderWidth:3,
 	hoverBorderColor:'#18a30b',
 	fill: false,
@@ -213,7 +234,7 @@ options:{
 	},
 	title:{
 	display:true,
-	text:'Guariti giornalieri',
+	text:'Guariti Giornalieri',
 	fontSize:30,
 	},
 	legend:{
@@ -234,33 +255,45 @@ options:{
 	},
 	tooltips:{
 	enabled:true
-	}
+	},
+	
 }
-}); 
+};
+
+var chart3 = new Chart(ctx3, boh3)
+
+var datas1 = getDati1();
+var datas2 = getDati2();
+var datas3 = getDati3();
 
 
-var myChart4 = document.getElementById('myChart4').getContext('2d');
+var labels = datas1.map(function(e){
+	return e.Data;
+});
 
-// Global Options
-// Chart.defaults.global.defaultFontFamily = 'Times New Roman';
-// Chart.defaults.global.defaultFontSize = 15;
-// Chart.defaults.global.defaultFontColor = '#777';
+var data1 = datas1.map(function(e){
+	return e.NuoviPositivi;
+});
 
-var boh4 = new Chart(myChart4																																																																																	, {
+var data2 = datas2.map(function(e){
+	return e.Deceduti;
+});
+
+var data3 = datas3.map(function(e){
+	return e.Dimessi;
+});
+
+
+var ctx4 = myChart4.getContext('2d');
+
+var boh4 = {
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
+	labels:labels,
 	datasets:[{
 		label:'Casi Giornalieri',
-		data:[
-			6194,
-			1845,
-			1560,
-			16519,
-			10516,
-			9072
-		],
+		data:data1,
 		backgroundColor:'rgba(170, 2, 2, 0.6)',
 		borderColor: '#a80d0d',
 		borderWidth:3.5,
@@ -271,14 +304,7 @@ data:{
 	},
 	{
 		label:'Morti Giornalieri',
-		data:[
-			619,
-			184,
-			1560,
-			1650,
-			1051,
-			907
-		],
+		data:data2,
 		//backgroundColor:'green',
 		backgroundColor:'rgba(0, 0, 0, 0.6)',
 	
@@ -291,14 +317,7 @@ data:{
 	},
 	{
 		label:'Guariti Giornalieri',
-		data:[
-			9070,
-			6190,
-			10510,
-			18400,
-			16500,
-			15600
-		],
+		data:data3,
 		backgroundColor:'rgba(24, 163, 11, 0.6)',
 		borderWidth:3.5,
 		borderColor:'#18a30b',
@@ -343,5 +362,8 @@ options:{
 	enabled:true
 	}
 }
-}); 
+};
+
+var chart4 = new Chart(ctx4, boh4)
+
 }
