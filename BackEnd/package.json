@@ -1,0 +1,26 @@
+{
+    "name": "elaborato_Backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js"
+    },
+    "author": "gabo",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Simone-Ricc/Elaborato-Covid19"
+    },
+    "bugs": {
+        "url": "https://github.com/Simone-Ricc/Elaborato-Covid19"
+    },
+    "homepage": "https://github.com/Simone-Ricc/Elaborato-Covid19",
+    "description": "",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}
