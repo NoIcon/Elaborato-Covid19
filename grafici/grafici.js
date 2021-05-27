@@ -1,26 +1,36 @@
 window.onload = function() {
-	var myChart1 = document.getElementById('myChart1').getContext('2d');
 
-// Global Options
-// Chart.defaults.global.defaultFontFamily = 'Times New Roman';
-// Chart.defaults.global.defaultFontSize = 15;
-// Chart.defaults.global.defaultFontColor = '#777';
+	$(document).ready(function(){
+		console.log("ddentro");
+		$.get("https://api.elaborato-covid19.com/datiNazionaliNuoviPos",function(datas,status){
+			console.log(datas);
+			console.log("Ciao");
+		});
+	})
+	
+	// msg = JSON.parse(data);
+	
+	var labels = datas.jsonarray.map(function(e){
+		return e.Data;
+	});
+	
+	var data = datas.jsonarray.map(function(e){
+		return e.NuoviCasi;
+	});
 
-window.boh = new Chart(myChart1, {
+	var myChart1 = myChart1.getContext('2d');
+
+
+window.boh = {
+
+
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
+	labels:labels,
 	datasets:[{
 	label:'Casi Giornalieri',
-	data:[
-		6194,
-		1845,
-		1560,
-		16519,
-		10516,
-		9072
-	],
+	data: data,
 	backgroundColor:'rgba(170, 2, 2, 0.6)',
 	borderColor: '#a80d0d',
 	borderWidth:3.5,
@@ -65,7 +75,9 @@ options:{
 	},
 	
 }
-});
+};
+
+var chart1 = new Chart(myChart1, boh)
 
 
 
