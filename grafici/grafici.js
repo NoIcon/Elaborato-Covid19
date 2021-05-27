@@ -1,13 +1,34 @@
-window.onload = function() {
+function getDati(){
+	var datas; 
+	$.ajax({
+		async: false,
+		url: "https://api.elaborato-covid19.com/datiNazionaliNuoviPos",
+		success: function(dati){	
+		datas = dati;	
+		return dati;
+	}});
 
+	return datas;
+}
+
+
+window.onload = function() {
+	var datas = getDati();
+
+	/*
 	$(document).ready(function(){
 		console.log("ddentro");
-		$.get("https://api.elaborato-covid19.com/datiNazionaliNuoviPos",function(datas,status){
-			console.log(datas);
+		
+		$.get("https://api.elaborato-covid19.com/datiNazionaliNuoviPos",function(dati,status){
+			datas = dati;
+			console.log(dati);
 			console.log("Ciao");
 		});
-	})
-	
+	});
+	*/
+
+
+	console.log(datas);
 	// msg = JSON.parse(data);
 	
 	var labels = datas.jsonarray.map(function(e){
