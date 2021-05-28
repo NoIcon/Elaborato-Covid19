@@ -17,8 +17,13 @@ function getDati2(){
 		async: false,
 		url: "https://api.elaborato-covid19.com/datiNazionaliDeceduti",
 		success: function(dati){	
-		datas2 = dati;	
-		return dati;
+		datas2 = dati;
+
+		for(var i=0;i<datas2.length-1;i++){	//per ogni elemento faccio la differenza, eccetto l'ultimo (che non verrà visualizzato)
+			datas2[i].Deceduti  = datas2[i].Deceduti-datas2[i+1].Deceduti;	//differenza
+		}
+		datas2.pop();	//rimuovo l'ultimo elemento (non posso sottrarlo a quello dopo essendo l'ultimo e allora non lo visualizzo)
+		return datas2;
 	}});
 
 	return datas2;
@@ -131,7 +136,6 @@ var datas2 = getDati2();
 
 
 window.boh2 = {
-
 
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
