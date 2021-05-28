@@ -35,7 +35,14 @@ function getDati3(){
 		async: false,
 		url: "https://api.elaborato-covid19.com/datiNazionaliDimessi",
 		success: function(dati){	
-		datas3 = dati;	
+		datas3 = dati;
+		
+		for(var i=0;i<datas3.length-1;i++){	//per ogni elemento faccio la differenza, eccetto l'ultimo (che non verrà visualizzato)
+			datas3[i].Dimessi  = datas3[i].Dimessi-datas3[i+1].Dimessi;	//differenza
+		}
+		datas3.pop();	//rimuovo l'ultimo elemento (non posso sottrarlo a quello dopo essendo l'ultimo e allora non lo visualizzo)
+		
+		
 		return dati;
 	}});
 
