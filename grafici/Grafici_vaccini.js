@@ -49,7 +49,7 @@ window.onload = function() {
 	//var labelsA = labels.replace("T00:00:00.000Z", "");
 	
 	var data = datas1.map(function(e){
-		return e.Somministrazioni;
+		return e.vaccini;
 	});
 
 	var ctx1 = myChart1.getContext('2d');
