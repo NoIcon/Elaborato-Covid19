@@ -62,10 +62,10 @@ window.boh = {
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:labels,
+	labels:labels.reverse(),
 	datasets:[{
 	label:'Casi Giornalieri',
-	data: data,
+	data: data.reverse(),
 	backgroundColor:'rgba(170, 2, 2, 0.6)',
 	borderColor: '#a80d0d',
 	borderWidth:3.5,
@@ -136,10 +136,10 @@ window.boh2 = {
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:labels,
+	labels:labels.reverse(),
 	datasets:[{
 	label:'Morti Giornalieri',
-	data: data,
+	data: data.reverse(),
 	backgroundColor:'rgba(0, 0, 0, 0.6)',
 	borderColor: '#000',
 	borderWidth:3.5,
@@ -210,10 +210,10 @@ window.boh3 = {
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:labels,
+	labels:labels.reverse(),
 	datasets:[{
 	label:'Guariti Giornalieri',
-	data: data,
+	data: data.reverse(),
 	backgroundColor:'rgba(24, 163, 11, 0.6)',
 	borderColor: '#18a30b',
 	borderWidth:3.5,
@@ -268,7 +268,7 @@ var datas3 = getDati3();
 
 
 var labels = datas1.map(function(e){
-	return e.Data;
+	return e.Data.replace("T00:00:00.000Z", "");
 });
 
 var data1 = datas1.map(function(e){
@@ -290,10 +290,10 @@ var boh4 = {
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
-	labels:labels,
+	labels:labels.reverse(),
 	datasets:[{
 		label:'Casi Giornalieri',
-		data:data1,
+		data:data1.reverse(),
 		backgroundColor:'rgba(170, 2, 2, 0.6)',
 		borderColor: '#a80d0d',
 		borderWidth:3.5,
@@ -304,7 +304,7 @@ data:{
 	},
 	{
 		label:'Morti Giornalieri',
-		data:data2,
+		data:data2.reverse(),
 		//backgroundColor:'green',
 		backgroundColor:'rgba(0, 0, 0, 0.6)',
 	
@@ -317,7 +317,7 @@ data:{
 	},
 	{
 		label:'Guariti Giornalieri',
-		data:data3,
+		data:data3.reverse(),
 		backgroundColor:'rgba(24, 163, 11, 0.6)',
 		borderWidth:3.5,
 		borderColor:'#18a30b',
