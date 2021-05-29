@@ -220,6 +220,17 @@ ul{
     height: 400px   !important;
 }
 
+.contiene{
+	text-align: center;
+}
+
+.contiene button{
+	border-radius: 20px 10px 20px 10px;
+	background-color: #e0112d;
+	color: honeydew;
+	padding: 5px;
+}
+
 .footer{
 	background-color: #24262b;
     padding: 70px 0;

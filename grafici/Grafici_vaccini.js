@@ -2,7 +2,7 @@ function getDati1(){
 	var datas1; 
 	$.ajax({
 		async: false,
-		url: "https://api.elaborato-covid19.com/datiNazionaliVaccini",
+		url: "https://api.elaborato-covid19.com/datiNazionaliVaccini15gg",
 		success: function(dati){	
 		datas1 = dati;	
 		return dati;
