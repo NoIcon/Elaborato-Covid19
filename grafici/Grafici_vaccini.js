@@ -118,7 +118,7 @@ var datas3 = getDati3();
 	console.log(datas2);
 	console.log(datas3);
 	
-	var labels = datas2.map(function(e){
+	var labels = datas1.map(function(e){
 		return e.Data.replace("T00:00:00.000Z", "");
 	});
 	
@@ -140,17 +140,17 @@ type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
 	labels:labels.reverse(),
 	datasets:[{
-	label:'Vaccini prima dose',
-	data:data2.reverse(),
-	//backgroundColor:'green',
-	backgroundColor:'rgba(0, 0, 0, 0.6)',
+		label:'Vaccini prima dose',
+		data:data2.reverse(),
+		//backgroundColor:'green',
+		backgroundColor:'rgba(0, 0, 0, 0.6)',
 
-	borderWidth:3.5,
-	borderColor:'#000',
-	hoverBorderWidth:3,
-	hoverBorderColor:'#b00909',
-	fill: false,
-	lineTension: 0,
+		borderWidth:3.5,
+		borderColor:'#000',
+		hoverBorderWidth:3,
+		hoverBorderColor:'#b00909',
+		fill: false,
+		lineTension: 0,
 	},
 	{
 		label:'Vaccini secoonda dose',
