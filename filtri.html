@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a href="index.html" class="navbar-brand"><img class="logo" src="image/logoCovid19.png"></a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
@@ -76,28 +75,20 @@
             </select>
         </div> 
 
-        <!-- <div class="dropdown3">
-            <button onclick="myFunction3()" class="dropbtn3">Vaccinati</button>
-            <div id="myDropdown3" class="dropdown-content3">
-              <a href="#">d</a>
-              <a href="#">e</a>
-              <a href="#">f</a>
-            </div>
-        </div>  -->
 
         <div class="dropdown4">
             <label for="tipo">Tipo vaccino:</label>
             <select id="tipo" class="filtri">
-              <option>Pfzier/BioNTech</option>
-              <option>Vaxzevria(AstraZeneca)</option>
-              <option>Johnson & Johnson</option>
+              <option>Pfizer/BioNTech</option>
+              <option>Vaxzevria (AstraZeneca)</option>
+              <option>Janssen</option>
               <option>Moderna</option>
               <option>Tutti i vaccini</option>
             </select>
         </div> 
     <br>
         <div class="dropdown4">
-            <button onclick="myFunction()" class="cerca">Filtra</button>
+            <button onclick="filtra()" class="cerca">Filtra</button>
         </div>
         
 
@@ -167,10 +158,11 @@
    </footer>
 
 
-
+    <script type="text/javascript" src="filtraggio.js"></script>
     <script type="text/javascript" src="grafici.js"></script>
     <script type="text/javascript" src="comparsa.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
