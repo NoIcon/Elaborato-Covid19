@@ -37,6 +37,19 @@ function getDati3(){
 	return datas3;
 }
 
+function getDati4(){
+	var datas4; 
+	$.ajax({
+		async: false,
+		url: "https://api.elaborato-covid19.com/vacciniFascia",
+		success: function(dati){	
+		datas4 = dati;
+		return dati;
+	}});
+
+	return datas4;
+}
+
 window.onload = function() {
 	var datas1 = getDati1();
 
@@ -134,7 +147,7 @@ var datas3 = getDati3();
 
 
 
-var boh2 = {
+window.boh2 = {
 responsive: true,
 type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
 data:{
@@ -204,71 +217,92 @@ options:{
 };
 var chart2 = new Chart(ctx2, boh2)
 
-// var myChart3 = document.getElementById('myChart3').getContext('2d');
+var datas4 = getDati4();
 
-// // Global Options
-// // Chart.defaults.global.defaultFontFamily = 'Times New Roman';
-// // Chart.defaults.global.defaultFontSize = 15;
-// // Chart.defaults.global.defaultFontColor = '#777';
+	console.log(datas4);
 
-// var boh3 = new Chart(myChart3, {
-// responsive: true,
-// type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-// data:{
-// 	labels:['01/05', '02/05', '03/05', '04/05', '05/05', '06/05'],
-// 	datasets:[{
-// 	label:'Vaccini secoonda dose',
-// 	data:[
-// 		90700,
-// 		61900,
-// 		105100,
-// 		18400,
-// 		16500,
-// 		15600
-// 	],
-// 	backgroundColor:'rgba(24, 163, 11, 0.6)',
-// 	borderWidth:3.5,
-// 	borderColor:'#18a30b',
-// 	hoverBorderWidth:3,
-// 	hoverBorderColor:'#18a30b',
-// 	fill: false,
-// 	lineTension: 0,
-// 	}]
-// },
-// options:{
-// 	scales:{
-// 		yAxes:[{
-// 			ticks:{
-// 				beginAtZero: true
-// 			}
+	//var labelsA = labels.replace("T00:00:00.000Z", "");
+	var labels = datas4.map(function(e){
+		return e.Fascia
+	})
+
+	var data1 = datas4.map(function(e){
+		return e.Dosi;
+	});
+
+var ctx3 = myChart3.getContext('2d');
+
+var boh3 = {
+	responsive: true,
+	type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+	data:{
+		labels: labels,
+		datasets:[{
+			label:'Vaccini fascie di età',
+			data: data1,
+			//backgroundColor:'green',
+			backgroundColor:[
+			'rgba(255, 99, 132, 0.2)',
+			'rgba(255, 159, 64, 0.2)',
+			'rgba(255, 205, 86, 0.2)',
+			'rgba(75, 192, 192, 0.2)',
+			'rgba(54, 162, 235, 0.2)',
+			'rgba(153, 102, 255, 0.2)',
+			'rgba(201, 203, 207, 0.2)',
+			'rgba(127, 255, 0, 0.2)',
+			'rgba(255, 218, 185, 0.2)'
+			],
+			borderColor: [
+				'rgb(255, 99, 132)',
+				'rgb(255, 159, 64)',
+				'rgb(255, 205, 86)',
+				'rgb(75, 192, 192)',
+				'rgb(54, 162, 235)',
+				'rgb(153, 102, 255)',
+				'rgb(201, 203, 207)',
+				'rgba(127, 255, 0)',
+				'rgba(255, 218, 185)'
+			],
+			borderWidth: 1
+		}]
+	},
+	options:{
+		scales:{
+			yAxes:[{
+				ticks:{
+					beginAtZero: true
+				}
+				
+			}]
+		},
+			title:{
+			display:true,
+			text:'Vaccini fascie di età',
+			fontSize:30,
+		},
+			legend:{
+			borderWidth:1,
+			display:true,
+			position:'bottom',
+			labels:{
+				fontColor:'#000'
+			}
+		},
+		layout:{
+		padding:{
+			left:50,
+			right:50,
+			bottom:10,
+			top:10
+		}
+		},
+		tooltips:{
 			
-// 		}]
-// 	},
-// 	title:{
-// 	display:true,
-// 	text:'Vaccini secoonda dose',
-// 	fontSize:30,
-// 	},
-// 	legend:{
-// 	borderWidth:1,
-// 	display:true,
-// 	position:'bottom',
-// 	labels:{
-// 		fontColor:'#000'
-// 	}
-// 	},
-// 	layout:{
-// 	padding:{
-// 		left:50,
-// 		right:50,
-// 		bottom:10,
-// 		top:10
-// 	}
-// 	},
-// 	tooltips:{
-// 	enabled:true
-// 	}
-// }
-// }); 
+		}
+		
+	}
+	
+	};
+	var chart3 = new Chart(ctx3, boh3)
 
 }
