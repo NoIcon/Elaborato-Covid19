@@ -167,3 +167,17 @@
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;} 
+
+
+  .filtri{
+    border-radius: 10px 10px 10px 10px;
+    color: #e0112d;
+  }
+
+
+  .cerca{
+    border-radius: 10px 10px 10px 10px;
+    background-color: #e24617;
+    border-color: gray;
+    color: white;
+  }

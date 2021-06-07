@@ -52,25 +52,28 @@
 
     <div class="allBottoni">
         <div class="dropdown1">
-            <button onclick="myFunction1()" class="dropbtn1">Età</button>
-            <div id="myDropdown1" class="dropdown-content1">
-              <a href="filtri/eta/16-19.html">16-19</a>
-              <a href="filtri/eta/20-29.html">20-29</a>
-              <a href="filtri/eta/30-39.html">30-39</a>
-              <a href="filtri/eta/40-49.html">40-49</a>
-              <a href="filtri/eta/50-59.html">50-59</a>
-              <a href="filtri/eta/60-69.html">60-69</a>
-              <a href="filtri/eta/70-79.html">70-79</a>
-              <a href="filtri/eta/80+.html">80+</a>
-            </div>
+            <label for="eta">Età:</label>
+            <select id="eta" class="filtri"> 
+              <option>12-19</option>
+              <option>20-29</option>
+              <option>30-39</option>
+              <option>40-49</option>
+              <option>50-59</option>
+              <option>60-69</option>
+              <option>70-79</option>
+              <option>80-89</option>
+              <option>90+</option>
+              <option>Tutte le età</option>
+            </select>
         </div> 
 
         <div class="dropdown2">
-            <button onclick="myFunction2()" class="dropbtn2">Sesso</button>
-            <div id="myDropdown2" class="dropdown-content2">
-              <a href="filtri/sesso/femmine.html">F</a>
-              <a href="filtri/sesso/maschi.html">M</a>
-            </div>
+            <label for="sesso">Sesso:</label>
+            <select id="sesso" class="filtri">
+              <option>F</option>
+              <option>M</option>
+              <option>Entrambi</option>
+            </select>
         </div> 
 
         <!-- <div class="dropdown3">
@@ -83,21 +86,28 @@
         </div>  -->
 
         <div class="dropdown4">
-            <button onclick="myFunction4()" class="dropbtn4">Tipo</button>
-            <div id="myDropdown4" class="dropdown-content4">
-              <a href="filtri/tipi/Pfzier-BioNTech.html">Pfzier/BioNTech</a>
-              <a href="filtri/tipi/Vaxzevria(AstraZeneca).html">Vaxzevria(AstraZeneca)</a>
-              <a href="filtri/tipi/Johnson&Johnson.html">Johnson & Johnson</a>
-              <a href="filtri/tipi/Moderna.html">Moderna</a>
-            </div>
+            <label for="tipo">Tipo vaccino:</label>
+            <select id="tipo" class="filtri">
+              <option>Pfzier/BioNTech</option>
+              <option>Vaxzevria(AstraZeneca)</option>
+              <option>Johnson & Johnson</option>
+              <option>Moderna</option>
+              <option>Tutti i vaccini</option>
+            </select>
         </div> 
+    <br>
+        <div class="dropdown4">
+            <button onclick="myFunction()" class="cerca">Filtra</button>
+        </div>
+        
+
     </div>
 
     <div class="testo">
         <h3>Benvenuto nella sezione di ricerca per filtri.</h3>
         <h5>Le opzioni utilizzabili in queste sezione, come si vede dai bottoni, sono:</h5>
         <p>
-            -Ricerca per fascie di età: permette di visualizzare quante persone di quella fascia sono state contagiate, guarite, vaccinate e decedute;
+            -Ricerca per fasce di età: permette di visualizzare quante persone di quella fascia sono state contagiate, guarite, vaccinate e decedute;
         </p>
         <p>
             -Ricerca per sesso: molto più semplice della precedente, ti permette di visualizzare gli stessi dati, ma divisi per sesso

@@ -75,11 +75,11 @@ data:{
 	datasets:[{
 	label:'Vaccini giornalieri',
 	data:data.reverse(),
-	backgroundColor:'rgba(170, 2, 2, 0.6)',
-	borderColor: '#a80d0d',
+	backgroundColor:'rgba(65, 105, 255, 0.6)',
+	borderColor: '#4169e1',
 	borderWidth:3.5,
 	hoverBorderWidth:3,
-	hoverBorderColor:'#b00909',
+	hoverBorderColor:'#4169e1',
 	fill: false,
 	lineTension: 0,
 	}]
@@ -238,7 +238,7 @@ var boh3 = {
 	data:{
 		labels: labels,
 		datasets:[{
-			label:'Vaccini fascie di età',
+			label:'Vaccini fasce di età',
 			data: data1,
 			//backgroundColor:'green',
 			backgroundColor:[
@@ -248,7 +248,7 @@ var boh3 = {
 			'rgba(75, 192, 192, 0.2)',
 			'rgba(54, 162, 235, 0.2)',
 			'rgba(153, 102, 255, 0.2)',
-			'rgba(201, 203, 207, 0.2)',
+			'rgba(240, 128, 128, 0.2)',
 			'rgba(127, 255, 0, 0.2)',
 			'rgba(255, 218, 185, 0.2)'
 			],
@@ -259,7 +259,7 @@ var boh3 = {
 				'rgb(75, 192, 192)',
 				'rgb(54, 162, 235)',
 				'rgb(153, 102, 255)',
-				'rgb(201, 203, 207)',
+				'rgb(240, 128, 128)',
 				'rgba(127, 255, 0)',
 				'rgba(255, 218, 185)'
 			],
@@ -277,7 +277,7 @@ var boh3 = {
 		},
 			title:{
 			display:true,
-			text:'Vaccini fascie di età',
+			text:'Vaccini fasce di età',
 			fontSize:30,
 		},
 			legend:{
