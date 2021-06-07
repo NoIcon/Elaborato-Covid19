@@ -64,8 +64,9 @@ function filtra(){
         options:{
             scales:{
                 yAxes:[{
+                    display: true,
                     ticks:{
-                        beginAtZero: true
+                        beginAtZero: true,
                     }
                     
                 }]

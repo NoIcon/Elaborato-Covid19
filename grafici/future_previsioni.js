@@ -8,6 +8,12 @@ function getDati1(){
 		return dati;
 	}});
 
+	for(var i=0;i<datas1.length;i++){
+		if(datas1[i]['Valore'] < 0)
+			datas1[i]['Valore'] = 0;
+	}
+	console.log("CIAO");
+	console.log(datas1);
 	return datas1;
 }
 
@@ -117,11 +123,12 @@ window.onload = function() {
 			type: 'category'
 		  }],
 		  yAxes: [{
+			display: true,
 			id: 'y',
 			type: 'linear',
 			position: "left",
 			ticks: {
-			  stepSize: 10
+			  
 			}
 		  }]
 		}
@@ -208,7 +215,6 @@ var datas2 = getDati2();
 			type: 'linear',
 			position: "left",
 			ticks: {
-			  stepSize: 15
 			}
 		  }]
 		}
@@ -292,7 +298,6 @@ var datas3 = getDati3();
 			type: 'linear',
 			position: "left",
 			ticks: {
-			  stepSize: 10
 			}
 		  }]
 		}
