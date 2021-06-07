@@ -45,6 +45,19 @@ function getDati3(){
 }
 
 
+function getMax(array){
+	var max = 0;
+	var index;
+
+	for(var i=0;i<array.length;i++)
+		if(array[i]['Valore'] > max){
+			max = array[i]['Valore']
+			index = i;
+		}
+	return index;
+}
+
+
 window.onload = function() {
 	var datas1 = getDati1();
 
@@ -78,7 +91,7 @@ window.onload = function() {
 		labels: labels,
 		datasets: [
 		  {
-			label: "Line",
+			label: "Casi Giornalieri",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 192, 0.5)",
 			borderColor: "rgb(75, 192, 192)",
@@ -90,7 +103,7 @@ window.onload = function() {
 			xAxisID: 'x'
 		  },
 		  {
-			label: "BandTop",
+			label: "Incertezza",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 255, 0.5)",
 			borderColor: "transparent",
@@ -102,7 +115,7 @@ window.onload = function() {
 			xAxisID: 'x'
 		  },
 		  {
-			label: "BandBottom",
+			label: "Incertezza",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 255, 0.5)",
 			borderColor: "transparent",
@@ -128,13 +141,14 @@ window.onload = function() {
 			type: 'linear',
 			position: "left",
 			ticks: {
-			  
+			  max: datas1[getMax(datas1)]['Valore'] * 3,
+			  min: 0
 			}
 		  }]
 		}
 	  }
 	};
-	
+
 
 var chart1 = new Chart(ctx1, boh)
 
@@ -166,7 +180,7 @@ var datas2 = getDati2();
 		labels: labels,
 		datasets: [
 		  {
-			label: "Line",
+			label: "Casi Totali",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 192, 0.5)",
 			borderColor: "rgb(75, 192, 192)",
@@ -178,7 +192,7 @@ var datas2 = getDati2();
 			xAxisID: 'x'
 		  },
 		  {
-			label: "BandTop",
+			label: "Incertezza",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 255, 0.5)",
 			borderColor: "transparent",
@@ -190,7 +204,7 @@ var datas2 = getDati2();
 			xAxisID: 'x'
 		  },
 		  {
-			label: "BandBottom",
+			label: "Incertezza",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 255, 0.5)",
 			borderColor: "transparent",
@@ -249,7 +263,7 @@ var datas3 = getDati3();
 		labels: labels,
 		datasets: [
 		  {
-			label: "Line",
+			label: "Morti",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 192, 0.5)",
 			borderColor: "rgb(75, 192, 192)",
@@ -261,7 +275,7 @@ var datas3 = getDati3();
 			xAxisID: 'x'
 		  },
 		  {
-			label: "BandTop",
+			label: "Incertezza",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 255, 0.5)",
 			borderColor: "transparent",
@@ -273,7 +287,7 @@ var datas3 = getDati3();
 			xAxisID: 'x'
 		  },
 		  {
-			label: "BandBottom",
+			label: "Incertezza",
 			type: "line",
 			backgroundColor: "rgb(75, 192, 255, 0.5)",
 			borderColor: "transparent",
